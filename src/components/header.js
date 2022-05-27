@@ -1,24 +1,17 @@
 import * as React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
-import Container from '@material-ui/core/Container';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import MenuIcon from '@material-ui/icons/Menu';
-import AdbIcon from '@material-ui/icons/Adb';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const pages = ['Planner', 'Editor'];
-const settings = ['Profile', 'Logout'];
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,14 +21,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
   },
 }));
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [title, setTitle] = React.useState(pages[0])
+  const [title, setTitle] = React.useState(pages[0]);
 
   const classes = useStyles();
 
@@ -63,7 +56,7 @@ const Header = () => {
   const handleOpenPlanner = () => {
     setTitle(pages[0]);
     setAnchorElNav(null);
-  }
+  };
 
   return (
     <AppBar position="static">
@@ -93,13 +86,15 @@ const Header = () => {
           <MenuItem onClick={handleOpenPlanner}>Planner</MenuItem>
           <MenuItem onClick={handleOpenEditor}>Editor</MenuItem>
         </Menu>
-        <Typography className={classes.title} variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          className={classes.title}
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1 }}
+        >
           {title}
         </Typography>
-        <IconButton
-          color="inherit"
-          onClick={handleOpenUserMenu}
-        >
+        <IconButton color="inherit" onClick={handleOpenUserMenu}>
           <AccountCircleIcon />
         </IconButton>
         <Menu
@@ -124,5 +119,5 @@ const Header = () => {
       </Toolbar>
     </AppBar>
   );
-}
+};
 export default Header;
