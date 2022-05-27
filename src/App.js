@@ -1,9 +1,8 @@
-import Header from './components/header.js'
+import React from 'react';
+import Header from './components/header.js';
 
 function App() {
-  return (
-    <Header />
-  );
+  return <Header />;
 }
 
 export default App;
