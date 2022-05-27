@@ -1,0 +1,18 @@
+env:
+  browser: true
+  es2021: true
+plugins:
+  - react
+  - prettier
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+  - prettier
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: latest
+  sourceType: module
+settings:
+  react:
+    version: detect
