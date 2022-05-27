@@ -5,7 +5,6 @@ plugins:
   - react
   - prettier
 extends:
-  - standard
   - eslint:recommended
   - plugin:react/recommended
   - prettier
